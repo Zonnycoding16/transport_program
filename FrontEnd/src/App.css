@@ -1,0 +1,30 @@
+#root {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* src/App.css */
+.App {
+  display: flex;
+  flex-direction: column; /* Xếp dọc */
+  width: 100vw;           /* 100% chiều rộng màn hình */
+  height: 100vh;          /* 100% chiều cao màn hình */
+  position: relative;
+}
+
+/* Container chứa bản đồ sẽ chiếm hết phần còn lại */
+.map-container {
+  flex: 1;                /* Tự động lấp đầy khoảng trống */
+  width: 100%;
+  position: relative;
+  z-index: 0;             /* Nằm dưới thanh điều khiển */
+}
+
+/* Fix lỗi render của Leaflet */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+}
