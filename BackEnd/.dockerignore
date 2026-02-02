@@ -1,0 +1,9 @@
+target
+.git
+.github
+node_modules
+*.log
+*.tmp
+/.idea
+/.vscode
+**/src/test
