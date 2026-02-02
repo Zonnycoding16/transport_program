@@ -25,6 +25,7 @@
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
+            <version>42.8.0</version>
             <scope>runtime</scope>
         </dependency>
         <dependency>
@@ -53,19 +54,7 @@
                     </excludes>
                 </configuration>
             </plugin>
-                <plugin>
-                    <groupId>org.openrewrite.maven</groupId>
-                    <artifactId>rewrite-maven-plugin</artifactId>
-                    <version>5.47.3</version>
-                    <configuration>
-                        <activeRecipes>
-                            <recipe>org.openrewrite.java.migrate.UpgradeToJava21</recipe>
-                        </activeRecipes>
-                        <activeRecipeArtifacts>
-                            <activeRecipeArtifact>org.openrewrite.recipe:rewrite-migrate-java:2.31.1</activeRecipeArtifact>
-                        </activeRecipeArtifacts>
-                    </configuration>
-                </plugin>
+            
         </plugins>
     </build>
 
