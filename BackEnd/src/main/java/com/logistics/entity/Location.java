@@ -1,9 +1,9 @@
-package com.logistics.entity; // Đã sửa cho khớp với thư mục của bạn
+package com.logistics.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.AllArgsConstructor;
 
 @Entity
 @Data
@@ -11,7 +11,6 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 @Table(name = "locations")
 public class Location {
-    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -19,7 +18,12 @@ public class Location {
     @Column(nullable = false)
     private String name;
 
-    private String type; 
-    
+    private String code;
     private String description;
+
+    @ManyToOne
+    @JoinColumn(name = "province_id")
+    private Province province;
+
+    // Các mối quan hệ khác nếu cần thì thêm sau
 }
